@@ -32,8 +32,6 @@ function* refreshTokenSaga(action){
     yield  put(refreshTokenSuccess(res.data));
     localStorage.setItem("accessToken",res.data);
     Axios.interceptors.request.use((config)=>{
-        console.log("runnnn");
-        console.log(res.data);
         config.headers.Authorization = "Bearer " + res.data;
         return config
     })
