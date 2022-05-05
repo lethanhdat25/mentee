@@ -1,0 +1,14 @@
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.control-btn{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-auto-flow: column;
+    gap: 20px;
+}

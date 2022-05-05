@@ -1,0 +1,15 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.control{
+    display: grid;
+    gap: 30px;
+    grid-auto-flow: column;
+
+}
+.control-btn{
+    width: 80%;
+}
