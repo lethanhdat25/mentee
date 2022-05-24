@@ -50,14 +50,14 @@ const Login = () => {
 
     const schema = yup.object().shape(
         {
-            username: yup.string().required(),
-            password: yup.string().required()
+            userName: yup.string().required(),
+            passwordHash: yup.string().required()
         }
     );
 
     const initialValues = {
-        username: '',
-        password: '',
+        userName: '',
+        passwordHash: '',
     };
 
     const step = useMemo(()=>status==="login"?"LOGIN":"REGISTER",[status]);
@@ -87,20 +87,20 @@ const Login = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className={css['form-inner']}>
                                         <div className={css.control}>
-                                            <label htmlFor={'username'}>Name</label>
-                                            <input value={values.username} type={'text'} id={'username'}
-                                                   name={'username'}
+                                            <label htmlFor={'userName'}>Name</label>
+                                            <input value={values.userName} type={'text'} id={'userName'}
+                                                   name={'userName'}
                                                    onBlur={handleBlur}
                                                    onChange={handleChange}/>
-                                            {errors.username && touched.username ? <div>{errors.username}</div> : null}
+                                            {errors.userName && touched.userName ? <div>{errors.userName}</div> : null}
                                         </div>
                                         <div className={css.control}>
-                                            <label htmlFor={'password'}>Password</label>
-                                            <input value={values.password} type={'password'} id={'password'}
-                                                   name={'password'}
+                                            <label htmlFor={'passwordHash'}>Password</label>
+                                            <input value={values.passwordHash} type={'passwordHash'} id={'passwordHash'}
+                                                   name={'passwordHash'}
                                                    onBlur={handleBlur}
                                                    onChange={handleChange}/>
-                                            {errors.password && touched.password ? <div>{errors.password}</div> : null}
+                                            {errors.passwordHash && touched.passwordHash ? <div>{errors.passwordHash}</div> : null}
                                         </div>
                                         <button type="submit" className="btn btn-primary">{step}</button>
                                         {smallBtn}

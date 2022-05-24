@@ -1,8 +1,8 @@
 import Axios from 'axios';
 
-const loginPath = '/user/sign-in';
-const signUpPath = '/user';
-const refreshTokenPath = '/user/reissue';
+const loginPath = '/auth/login';
+const signUpPath = '/auth/register';
+const refreshTokenPath = '/token/refresh';
 export const loginApi = (data) => {
     return Axios.post(loginPath, data);
 };
